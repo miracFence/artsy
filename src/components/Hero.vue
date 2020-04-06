@@ -14,7 +14,7 @@
         </div>
         <div class="col-md-7">
           <div class="graphic">
-            <img src="/img/svg/graphic.svg" />
+            <img src="/img/svg/graphic.svg" class="img-fluid" />
           </div>
         </div>
       </div>

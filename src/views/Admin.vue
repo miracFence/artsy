@@ -1,36 +1,117 @@
 <template>
-  <div class="home">
-    <Navbar></Navbar>
-    <Hero />
-    <Products />
+  <div class="admin">
+    <div class="page-wrapper default-theme sidebar-bg bg1 toggled">
+      <a id="show-sidebar" @click="closeMenu" class="btn btn-sm btn-dark" href="#">
+        <i class="fas fa-bars"></i>
+      </a>
+      <nav id="sidebar" class="sidebar-wrapper">
+        <div class="sidebar-content">
+          <!-- sidebar-brand  -->
+          <div class="sidebar-item sidebar-brand">
+            <a href="#">ARTSY</a>
+            <div id="close-sidebar" @click="closeMenu">
+              <i class="fas fa-times"></i>
+            </div>
+          </div>
+          <!-- sidebar-header  -->
+          <div class="sidebar-item sidebar-header d-flex flex-nowrap">
+            <div class="user-pic">
+              <img class="img-responsive img-rounded" src="img/user.png" alt="User picture" />
+            </div>
+            <div class="user-info">
+              <span class="user-name">
+                Jhon
+                <strong>Smith</strong>
+              </span>
+              <span class="user-role">Administrator</span>
+              <span class="user-status">
+                <i class="fa fa-circle"></i>
+                <span>Online</span>
+              </span>
+            </div>
+          </div>
+          <!-- sidebar-search  -->
+          <div class="sidebar-item sidebar-search">
+            <div>
+              <div class="input-group">
+                <input type="text" class="form-control search-menu" placeholder="Search..." />
+                <div class="input-group-append">
+                  <span class="input-group-text">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- sidebar-menu  -->
+          <div class="sidebar-item sidebar-menu">
+            <ul>
+              <li class="header-menu">
+                <span>Menu</span>
+              </li>
+              <li>
+                <router-link to="/admin/overview">
+                  <i class="fa fa-chart-line"></i>
+                  <span>Overview</span>
+                </router-link>
+              </li>
 
-    <div class="container h-100">
-      <div class="row p-5 h-100 justify-content-center align-items-center">
-        <div class="col-md-6">
-          <img src="/img/svg/products.svg" alt width="400" />
+              <li>
+                <router-link to="/admin/products">
+                  <i class="fab fa-amazon"></i>
+                  <span class="menu-text">Products</span>
+                </router-link>
+              </li>
+              <li>
+                <router-link to="/admin/orders">
+                  <i class="fa fa-shopping-cart"></i>
+                  <span class="menu-text">Orders</span>
+                </router-link>
+              </li>
+              <li>
+                <a href="#" @click="logout">
+                  <i class="fa fa-power-off"></i>
+                  <span class="menu-text">Logout</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <!-- sidebar-menu  -->
         </div>
-        <div class="col-md-6">
-          <h3>Learn More About us</h3>
-          <p>Click in the link below to check more products</p>
-          <button class="btn custom-btn btn-outline-primary mr-4">Browse Products</button>
-        </div>
-      </div>
+        <!-- sidebar-footer  -->
+      </nav>
+      <!-- page-content  -->
+      <main class="page-content pt-2">
+        <router-view />
+      </main>
+      <!-- page-content" -->
     </div>
+    <!-- page-wrapper -->
   </div>
 </template>
 
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+
 <script>
 // @ is an alias to /src
-import Navbar from "@/components/Navbar.vue";
-import Hero from "@/components/Hero.vue";
-import Products from "@/sections/Products.vue";
-
+import { fb } from "../firebase";
 export default {
-  name: "Home",
-  components: {
-    Navbar,
-    Hero,
-    Products
+  name: "admin",
+  components: {},
+  methods: {
+    closeMenu() {
+      $(".page-wrapper").toggleClass("toggled");
+    },
+    logout() {
+      fb.auth()
+        .signOut()
+        .then(() => {
+          this.$router.replace("/");
+        })
+        .catch(err => {
+          console.log(err);
+        });
+    }
   }
 };
 </script>
