@@ -1,4 +1,7 @@
 import firebase from 'firebase';
+import 'firebase/firestore';
+import 'firebase/firebase-auth';
+import 'firebase/storage';
 require("firebase/firestore");
 // Your web app's Firebase configuration
 var firebaseConfig = {

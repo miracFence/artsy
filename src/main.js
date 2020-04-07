@@ -1,13 +1,34 @@
 import Vue from "vue";
 import App from "./App.vue";
 import router from "./router";
-import 'bootstrap';
 import jQuery from 'jquery';
-import 'popper.js';
-import './assets/app.scss';
 import { fb } from './firebase';
+import VueFirestore from 'vue-firestore';
 
-window.$ = window.jQuery = jQuery;
+Vue.use(VueFirestore, {
+  key: 'id',
+  enumerable: true
+});
+
+window.$ = require('jquery');
+window.jQuery = require('jquery');
+
+import 'popper.js';
+import 'bootstrap';
+import './assets/app.scss';
+
+import Swal from 'sweetalert2';
+
+window.Swal = Swal;
+
+const Toast = Swal.mixin({
+  toast: true,
+  position: 'top-end',
+  showConfirmButton: false,
+  timer: 3000
+});
+
+window.Toast = Toast;
 
 Vue.config.productionTip = false;
 
@@ -22,4 +43,5 @@ fb.auth().onAuthStateChanged(function (user) {
 
   }
 });
+
 

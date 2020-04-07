@@ -16,7 +16,7 @@
           <!-- sidebar-header  -->
           <div class="sidebar-item sidebar-header d-flex flex-nowrap">
             <div class="user-pic">
-              <img class="img-responsive img-rounded" src="img/user.png" alt="User picture" />
+              <img class="img-responsive img-rounded" src="/img/user.png" alt="User picture" />
             </div>
             <div class="user-info">
               <span class="user-name">
@@ -90,7 +90,6 @@
   </div>
 </template>
 
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
 
 <script>
 // @ is an alias to /src
