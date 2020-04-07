@@ -4,7 +4,10 @@ import router from "./router";
 import jQuery from 'jquery';
 import { fb } from './firebase';
 import VueFirestore from 'vue-firestore';
+import VueCarousel from 'vue-carousel';
 
+
+Vue.component('products-list', require('./sections/ProductList.vue').default);
 Vue.use(VueFirestore, {
   key: 'id',
   enumerable: true
@@ -29,6 +32,8 @@ const Toast = Swal.mixin({
 });
 
 window.Toast = Toast;
+
+Vue.use(VueCarousel);
 
 Vue.config.productionTip = false;
 

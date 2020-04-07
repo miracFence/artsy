@@ -3,6 +3,7 @@
     <Navbar></Navbar>
     <Hero />
     <Products />
+    <products-list></products-list>
 
     <div class="container h-100">
       <div class="row p-5 h-100 justify-content-center align-items-center">
@@ -32,8 +33,8 @@ export default {
   components: {
     Navbar,
     Hero,
-    Products,
-    Login
+    Login,
+    Products
   }
 };
 </script>

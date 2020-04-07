@@ -126,10 +126,9 @@
   </div>
 </template>
 
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
 
 <script>
-import { fb } from "../firebase";
+import { fb, db } from "../firebase";
 
 export default {
   name: "Login",
@@ -170,6 +169,18 @@ export default {
 
         .then(user => {
           $("#login").modal("hide");
+
+          db.collection("profiles")
+            .doc(user.user.uid)
+            .set({
+              name: this.name
+            })
+            .then(function() {
+              console.log("Document successfully written!");
+            })
+            .catch(function(error) {
+              console.error("Error writing document: ", error);
+            });
 
           this.$router.replace("admin");
         })
