@@ -45,8 +45,14 @@ const router = new VueRouter({
           path: "orders",
           name: "orders",
           component: Orders
-        }
-      ]
+        },
+      ],
+    },
+    {
+      path: "/checkout",
+      name: "checkout",
+      component: () =>
+        import("../views/Checkout.vue")
     }
   ]
 });

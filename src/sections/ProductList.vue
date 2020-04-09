@@ -15,8 +15,14 @@
             <div class="card-body">
               <div class="d-flex justify-content-between">
                 <h5 class="card-title">{{ product.name }}</h5>
-                <a href="#" class="btn btn-primary">Add to cart</a>
+                <h5 class="card-prices">{{ product.price | currency }}</h5>
               </div>
+              <add-to-cart
+                :image="getImage(product.images)"
+                :p-id="product.id"
+                :price="product.price"
+                :name="product.name"
+              ></add-to-cart>
             </div>
           </div>
         </div>
