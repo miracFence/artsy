@@ -1,3 +1,4 @@
+  
 <template>
   <div class="hello">
     <nav class="navbar custom-nav fixed-top navbar-expand-lg navbar-light bg-light">
@@ -28,12 +29,13 @@
               <router-link to="/about" class="nav-link">About</router-link>
             </li>
           </ul>
+
           <form class="form-inline my-2 my-lg-0">
             <a
               class="btn btn-outline-success my-2 my-sm-0"
               data-toggle="modal"
               data-target="#login"
-            >Get Started</a>
+            >Be an artist</a>
             <a
               class="btn btn-outline-info border-0 mx-2 my-2 my-sm-0"
               data-toggle="modal"
