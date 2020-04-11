@@ -8,7 +8,7 @@
         <div class="sidebar-content">
           <!-- sidebar-brand  -->
           <div class="sidebar-item sidebar-brand">
-            <a href="#">ARTSY</a>
+            <router-link to="/">Artsy</router-link>
             <div id="close-sidebar" @click="closeMenu">
               <i class="fas fa-times"></i>
             </div>
@@ -34,6 +34,12 @@
                 <span>Menu</span>
               </li>
               <li>
+                <router-link to="/productsPage">
+                  <i class="fa fa-chart-line"></i>
+                  <span>Artists creations</span>
+                </router-link>
+              </li>
+              <li>
                 <router-link to="/admin/overview">
                   <i class="fa fa-chart-line"></i>
                   <span>Overview</span>
@@ -43,19 +49,19 @@
               <li>
                 <router-link to="/admin/products">
                   <i class="fab fa-amazon"></i>
-                  <span class="menu-text">Products</span>
+                  <span class="menu-text">My products</span>
                 </router-link>
               </li>
               <li>
                 <router-link to="/admin/orders">
                   <i class="fa fa-shopping-cart"></i>
-                  <span class="menu-text">Orders</span>
+                  <span class="menu-text">My orders</span>
                 </router-link>
               </li>
               <li>
                 <router-link to="/admin/profile">
                   <i class="fa fa-user"></i>
-                  <span class="menu-text">Profile</span>
+                  <span class="menu-text">My profile</span>
                 </router-link>
               </li>
               <li>

@@ -21,11 +21,11 @@
               <router-link to="/" class="nav-link">Home</router-link>
             </li>
             <li class="nav-item">
-              <router-link to="/products" class="nav-link" href="#">Products</router-link>
+              <router-link to="/productsPage" class="nav-link">Products</router-link>
             </li>
 
             <li class="nav-item">
-              <router-link to="/about" class="nav-link" href="#">About</router-link>
+              <router-link to="/about" class="nav-link">About</router-link>
             </li>
           </ul>
           <form class="form-inline my-2 my-lg-0">

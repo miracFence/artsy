@@ -7,8 +7,11 @@
             <h1 class="hero-title">A digital art shop?!</h1>
             <p>Explore our art and different options</p>
             <div class="hero-btn mt-3">
-              <button class="btn custom-btn btn-info mr-4">Explore</button>
-              <button class="btn custom-btn btn-outline-secondary">Products</button>
+              <router-link
+                to="/productsPage"
+                class="btn custom-btn btn-info mr-4"
+                tag="button"
+              >Explore</router-link>
             </div>
           </div>
         </div>
