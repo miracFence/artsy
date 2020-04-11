@@ -6,6 +6,13 @@ import { fb } from './firebase';
 import VueFirestore from 'vue-firestore';
 import VueCarousel from 'vue-carousel';
 import Vue2Filters from 'vue2-filters';
+import Vuex from "vuex";
+import store from './store.js';
+import 'popper.js';
+import 'bootstrap';
+import './assets/app.scss';
+import Swal from 'sweetalert2';
+
 
 Vue.component('products-list', require('./sections/ProductList.vue').default);
 Vue.component('add-to-cart', require('@/components/AddToCart.vue').default);
@@ -20,12 +27,6 @@ Vue.use(VueFirestore, {
 window.$ = require('jquery');
 window.jQuery = require('jquery');
 
-import 'popper.js';
-import 'bootstrap';
-import './assets/app.scss';
-
-import Swal from 'sweetalert2';
-
 window.Swal = Swal;
 
 const Toast = Swal.mixin({
@@ -37,11 +38,7 @@ const Toast = Swal.mixin({
 
 window.Toast = Toast;
 
-import Vuex from "vuex";
 Vue.use(Vuex);
-
-import store from './store.js';
-
 Vue.use(VueCarousel);
 Vue.use(Vue2Filters);
 

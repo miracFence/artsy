@@ -53,6 +53,12 @@ const router = new VueRouter({
       name: "checkout",
       component: () =>
         import("../views/Checkout.vue")
+    },
+    {
+      path: "/about",
+      name: "about",
+      component: () =>
+        import("../views/About.vue")
     }
   ]
 });

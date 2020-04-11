@@ -29,12 +29,6 @@
             </li>
           </ul>
           <form class="form-inline my-2 my-lg-0">
-            <input
-              class="form-control mr-sm-2"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-            />
             <a
               class="btn btn-outline-success my-2 my-sm-0"
               data-toggle="modal"
@@ -45,7 +39,7 @@
               data-toggle="modal"
               data-target="#miniCart"
             >
-              <i class="fas fa-cart-plus"></i>
+              <i class="fas fa-shopping-bag"></i>
             </a>
           </form>
         </div>
@@ -70,7 +64,38 @@ export default {
   .navbar.custom-nav {
     padding-top: 16px;
     padding-bottom: 16px;
-    background-color: #fff !important;
+    background-color: white !important;
   }
+}
+
+.nav-link {
+  display: inline-block;
+  transition: 0.3s;
+}
+
+.btn-outline-success {
+  background-color: #ffa7a7;
+  border-color: #ffa7a7;
+}
+
+.btn-outline-success:hover {
+  background-color: #ffbcd9;
+  border-color: #ffbcd9;
+}
+
+.navbar-brand {
+  font-family: "Lobster", cursive;
+  font-size: 1.8em;
+}
+
+i {
+  font-size: 1.8em;
+}
+
+.fa-shopping-bag {
+  color: #353753;
+}
+.fa-shopping-bag:hover {
+  color: #c9fdff;
 }
 </style>

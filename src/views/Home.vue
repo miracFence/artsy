@@ -8,12 +8,14 @@
     <div class="container h-100">
       <div class="row p-5 h-100 justify-content-center align-items-center">
         <div class="col-md-6">
-          <img src="/img/svg/products.svg" alt width="400" />
+          <img src="/img/gif/cat.gif" class="img-fluid" />
         </div>
         <div class="col-md-6">
           <h3>Learn More About us</h3>
-          <p>Click in the link below to check more products</p>
-          <button class="btn custom-btn btn-outline-primary mr-4">Browse Products</button>
+          <p>Click in the links below to get to know more about the project</p>
+          <a href="https://github.com/miracFence/artsy">
+            <i class="fab fa-github"></i>
+          </a>
         </div>
       </div>
     </div>
@@ -38,5 +40,8 @@ export default {
 };
 </script>
 
-<style>
+<style scoped lang="scss">
+i {
+  font-size: 2.5em;
+}
 </style>

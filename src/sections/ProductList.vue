@@ -2,7 +2,7 @@
 <template>
   <div class="products" id="products">
     <div class="container">
-      <h1 class="text-center p-5">Our Products List</h1>
+      <h1 class="text-center p-5">View our art</h1>
       <div class="row">
         <div class="col-md-4" v-for="product in products" :key="product.id">
           <div class="card product-item">
@@ -62,5 +62,12 @@ export default {
   margin-top: 7rem;
   background: #f2f2f2;
   padding-bottom: 3rem;
+  height: 300;
+}
+
+.card-img-top {
+  width: 100%;
+  height: 15vw;
+  object-fit: cover;
 }
 </style>

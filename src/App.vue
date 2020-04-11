@@ -6,10 +6,8 @@
 
 <style lang="scss">
 #app {
-  font-family: "Nunito", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  // text-align: center;
+  font-family: "Acme", sans-serif;
+  font-size: 1.3em;
   color: #2c3e50;
 }
 #nav {
@@ -18,7 +16,7 @@
     font-weight: bold;
     color: #2c3e50;
     &.router-link-exact-active {
-      color: #42b983;
+      color: rgb(126, 44, 208);
     }
   }
 }

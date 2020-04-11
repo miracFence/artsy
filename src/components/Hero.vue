@@ -4,9 +4,9 @@
       <div class="row h-100 justify-content-center align-items-center">
         <div class="col-md-5">
           <div class="hero-content">
-            <h1 class="hero-title">Your favorite digital art shop!</h1>
-            <p>Explore our different art options that our artists create for you</p>
-            <div class="hero-btn mt-5">
+            <h1 class="hero-title">A digital art shop?!</h1>
+            <p>Explore our art and different options</p>
+            <div class="hero-btn mt-3">
               <button class="btn custom-btn btn-info mr-4">Explore</button>
               <button class="btn custom-btn btn-outline-secondary">Products</button>
             </div>
@@ -14,7 +14,7 @@
         </div>
         <div class="col-md-7">
           <div class="graphic">
-            <img src="/img/svg/graphic.svg" class="img-fluid" />
+            <img class="img-fluid" src="/img/gif/source.gif" alt />
           </div>
         </div>
       </div>
@@ -34,9 +34,29 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 .hero {
+  font-size: 1.5em;
   padding-top: 7rem;
   width: 100%;
   height: 500px;
   text-align: left;
+}
+
+.btn.custom-btn.btn-info.mr-4 {
+  background-color: #631dca;
+  color: white;
+  transition: 0.75s;
+  border-color: #d9ffbc;
+}
+
+.btn.custom-btn.btn-outline-secondary {
+  transition: 0.75s;
+}
+
+.btn.custom-btn.btn-outline-secondary:hover {
+  border-radius: 40px/1.4em;
+}
+
+.btn.custom-btn.btn-info.mr-4:hover {
+  border-radius: 40px/1.4em;
 }
 </style>
