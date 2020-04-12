@@ -47,7 +47,7 @@ export default {
 .btn.custom-btn.btn-info.mr-4 {
   background-color: #631dca;
   color: white;
-  transition: 0.75s;
+  transition: 0.25s;
   border-color: #d9ffbc;
 }
 

@@ -27,46 +27,62 @@
         <div class="col-md-3">
           <p>Total Price: {{this.$store.getters.totalPrice | currency}}</p>
 
-          <card
+          <!--card
             class="stripe-card"
             :class="{ complete }"
             stripe="pk_test_XXXXXXXXXXXXXXXXXXXXXXXX"
             :options="stripeOptions"
             @change="complete = $event.complete"
-          />
+          /-->
 
-          <button
-            class="pay-with-stripe btn btn-primary mt-4"
-            @click="pay"
-            :disabled="!complete"
-          >Pay with credit card</button>
+          <button class="btn btn-primary" @click="pay()">Checkout</button>
         </div>
       </div>
     </div>
   </div>
 </template>
 <script>
-import { Card, createToken } from "vue-stripe-elements-plus";
+import axios from "axios";
+var stripe = require("stripe")("sk_test_DemBjPLIiKgq8dYdipcirqDm00IvtwUCmf");
+
 export default {
   data() {
     return {
-      complete: false,
-      stripeOptions: {
-        // see https://stripe.com/docs/stripe.js#element-options for details
-      }
+      sessionId: ""
     };
   },
-  components: { Card },
   methods: {
     pay() {
-      // createToken returns a Promise which resolves in a result object with
-      // either a token or an error key.
-      // See https://stripe.com/docs/api#tokens for the token object.
-      // See https://stripe.com/docs/api#errors for the error object.
-      // More general https://stripe.com/docs/stripe.js#stripe-create-token.
-      createToken().then(data => console.log(data.token));
+      let data = this.$store.state.cart.map(item => ({
+        [item.productId]: item.productQuantity
+      }));
+
+      data = Object.assign({}, ...data);
+
+      axios
+        .get(
+          "https://us-central1-artsy-98316.cloudfunctions.net/CheckoutSession",
+          {
+            params: {
+              products: data
+            }
+          }
+        )
+        .then(response => {
+          this.sessionId = response.data;
+          console.log(response.data);
+          stripe
+            .redirectToCheckout({
+              sessionId: this.sessionId.id
+            })
+            .then(function(result) {});
+        })
+        .catch(error => {
+          console.log(error);
+        });
     }
-  }
+  },
+  created() {}
 };
 </script>
 

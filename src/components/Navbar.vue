@@ -70,11 +70,6 @@ export default {
   }
 }
 
-.nav-link {
-  display: inline-block;
-  transition: 0.3s;
-}
-
 .btn-outline-success {
   background-color: #ffa7a7;
   border-color: #ffa7a7;
