@@ -1,42 +1,14 @@
 <template>
   <div class="productsPage">
+    <Navbar></Navbar>
     <h2>Check this beautiful art</h2>
-    <ProductListing />
-    <h2>User Listing</h2>
-    <UserListing />
   </div>
 </template>
 
 <script>
-import ListingBuilder from "../patterns/creational/builders/ListingBuilder";
-import ListingDirector from "../patterns/creational/builders/ListingDirector";
-
 export default {
   name: "productsPage",
-  components: {
-    // ProductListing variants:
-    // ProductListing,
-    // ProductListing: new ListingBuilder()
-    //   .withProvider(ProductProvider)
-    //   .withListingItem(ProductListingItem)
-    //   .showFilter()
-    //   .showPagination()
-    //   .view("grid")
-    //   .build(),
-    ProductListing: new ListingDirector(
-      new ListingBuilder()
-    ).makeProductListing(),
-
-    // UserListing variants:
-    // UserListing,
-    // UserListing: new ListingBuilder()
-    //   .withProvider(UserProvider)
-    //   .withListingItem(UserListingItem)
-    //   .showPagination()
-    //   .view("table")
-    //   .build()
-    UserListing: new ListingDirector(new ListingBuilder()).makeUserListing()
-  }
+  components: {}
 };
 </script>
 

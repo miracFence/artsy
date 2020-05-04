@@ -2,12 +2,23 @@ import Vue from 'vue';
 import Vuex from 'vuex';
 
 Vue.use(Vuex);
+class CartSingleton {
+    constructor() {
+        if (!CartSingleton.instance) {
+            this._cart = window.localStorage.getItem("cart");
+            CartSingleton.instance = this;
+        }
+        return CartSingleton.instance;
+    }
 
-let cart = window.localStorage.getItem("cart");
+}
+
+const cartInstance = new CartSingleton();
+Object.freeze(cartInstance);
 
 export default new Vuex.Store({
     state: {
-        cart: cart ? JSON.parse(cart) : [],
+        cart: cartInstance._cart ? JSON.parse(cartInstance._cart) : [],
     },
     getters: {
         totalPrice: state => {
