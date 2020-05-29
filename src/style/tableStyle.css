@@ -1,0 +1,28 @@
+.table {
+    background-color: #eff9ef;
+  }
+
+  .btn.btn-primary.float-right{
+      color: black;
+      border-color: #EDD5D5;
+      background-color: #EDD5D5;
+  }
+
+
+  .btn.btn-primary{
+    border-color: #35c3b8;
+    background-color: 	#35c3b8;
+  }
+
+  .btn.btn-danger{
+      border-color: #ff37d8;
+      background-color: 	#ff37d8;
+  }
+  
+.table th{
+    background-color: #83E3BC;
+}
+
+  .table th,td {
+    text-align: center;
+  }

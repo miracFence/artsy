@@ -9,7 +9,7 @@
             <p>Change your profile settings here</p>
           </div>
           <div class="col-md-5">
-            <img src="/img/svg/profile.svg" width="300" alt class="img-fluid" />
+            <img src="/img/gif/profileGif.gif" width="300" alt class="img-fluid" />
           </div>
         </div>
       </div>
@@ -18,7 +18,6 @@
         <ul class="nav nav-pills ml-3" id="myTab" role="tablist">
           <li class="nav-item">
             <a
-              class="nav-link active"
               id="profile-tab"
               data-toggle="tab"
               href="#profile"
@@ -26,18 +25,6 @@
               aria-controls="profile"
               aria-selected="true"
             >Profile</a>
-          </li>
-
-          <li class="nav-item">
-            <a
-              class="nav-link"
-              id="account-tab"
-              data-toggle="tab"
-              href="#account"
-              role="tab"
-              aria-controls="account"
-              aria-selected="false"
-            >Account settings</a>
           </li>
         </ul>
 
@@ -56,7 +43,7 @@
                       type="text"
                       name
                       v-model="profile.name"
-                      placeholder="Full name"
+                      placeholder="Username"
                       class="form-control"
                     />
                   </div>
@@ -73,7 +60,29 @@
                   </div>
                 </div>
 
-                <div class="col-md-12">
+                <div class="col-md-8">
+                  <div class="form-group">
+                    <input
+                      type="text"
+                      v-model="profile.email"
+                      placeholder="Email"
+                      class="form-control"
+                    />
+                  </div>
+                </div>
+
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <input
+                      type="text"
+                      v-model="profile.email"
+                      placeholder="Email"
+                      class="form-control"
+                    />
+                  </div>
+                </div>
+
+                <div class="col-md-6">
                   <div class="form-group">
                     <input
                       type="text"
@@ -84,7 +93,7 @@
                   </div>
                 </div>
 
-                <div class="col-md-8">
+                <div class="col-md-6">
                   <div class="form-group">
                     <input
                       type="text"
@@ -103,78 +112,6 @@
                       value="Save Changes"
                       class="btn btn-primary w-100"
                     />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div
-            class="tab-pane fade pt-3"
-            id="account"
-            role="tabpanel"
-            aria-labelledby="account-tab"
-          >
-            <div class="container">
-              <div class="row">
-                <div class="col-md-">
-                  <div
-                    class="alert alert-info"
-                  >Please use the Reset password email button for reseting the password. The form doesn't work currently</div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <input
-                      type="text"
-                      v-model="account.name"
-                      placeholder="User name"
-                      class="form-control"
-                    />
-                  </div>
-                </div>
-
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <input
-                      type="text"
-                      v-model="account.email"
-                      placeholder="Email address"
-                      class="form-control"
-                    />
-                  </div>
-                </div>
-
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <input
-                      type="text"
-                      v-model="account.password"
-                      placeholder="New password"
-                      class="form-control"
-                    />
-                  </div>
-                </div>
-
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <input
-                      type="text"
-                      v-model="account.confirmPassword"
-                      placeholder="Confirm password"
-                      class="form-control"
-                    />
-                  </div>
-                </div>
-
-                <div class="col-md-4">
-                  <div class="form-group">
-                    <input type="file" @change="uploadImage" class="form-control" />
-                  </div>
-                </div>
-
-                <div class="col-md-4">
-                  <div class="form-group">
-                    <input type="submit" value="Save Changes" class="btn btn-primary w-100" />
                   </div>
                 </div>
 
@@ -259,4 +196,19 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
+#profile-tab {
+  color: #ffa500;
+}
+
+.btn.btn-primary {
+  color: black;
+  background-color: #ccd91f;
+  border-color: #ccd91f;
+}
+
+.btn.btn-success {
+  color: black;
+  background-color: #fab339;
+  border-color: #fab339;
+}
 </style>

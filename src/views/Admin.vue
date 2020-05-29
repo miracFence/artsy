@@ -8,7 +8,7 @@
         <div class="sidebar-content">
           <!-- sidebar-brand  -->
           <div class="sidebar-item sidebar-brand">
-            <router-link to="/">Artsy</router-link>
+            <router-link to="#">Artsy</router-link>
             <div id="close-sidebar" @click="closeMenu">
               <i class="fas fa-times"></i>
             </div>

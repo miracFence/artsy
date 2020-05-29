@@ -1,15 +1,20 @@
 <template>
-  <div class="products">
+  <div class="orders">
     <div class="container">
       <div class="intro h-100">
         <div class="row h-100 justify-content-center align-items-center">
           <div class="col-md-6">
-            <h3>Orders Page</h3>
-
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde, ducimus.</p>
+            <h1>Orders Page</h1>
+            <p>Here, you can view what people have ordered you &#129297;</p>
+            <select v-model="selected">
+              <option disabled value>Filter by sorting elements</option>
+              <option>A</option>
+              <option>B</option>
+              <option>C</option>
+            </select>
           </div>
           <div class="col-md-6">
-            <img src="/img/svg/orders.svg" alt class="img-fluid" />
+            <img src="/img/gif/painting.gif" alt class="img-fluid" />
           </div>
         </div>
       </div>
@@ -18,15 +23,16 @@
 
       <div class="product-test">
         <h3 class="d-inline-block">Orders list</h3>
-        <button @click="addNew" class="btn btn-primary float-right">Add Orders</button>
+        <button @click="addNew" class="btn btn-primary float-right">Add new independent order</button>
 
         <div class="table-responsive">
           <table class="table">
             <thead>
               <tr>
-                <th>Name</th>
+                <th>User</th>
+                <th>Product</th>
                 <th>Price</th>
-                <th>Modify</th>
+                <th>Date</th>
               </tr>
             </thead>
 
@@ -36,10 +42,8 @@
 
                 <td>{{product.price}}</td>
 
-                <td>
-                  <button class="btn btn-primary" @click="editProduct(product)">Edit</button>
-                  <button class="btn btn-danger" @click="deleteProduct(product)">Delete</button>
-                </td>
+                <td>$199.99</td>
+                <td>{{date}}</td>
               </tr>
             </tbody>
           </table>
@@ -161,6 +165,7 @@ export default {
   },
   data() {
     return {
+      date: null,
       products: [],
       product: {
         name: null,
@@ -210,13 +215,8 @@ export default {
         uploadTask.on(
           "state_changed",
           snapshot => {},
-          error => {
-            // Handle unsuccessful uploads
-          },
+          error => {},
           () => {
-            // Handle successful uploads on complete
-            // For instance, get the download URL: https://firebasestorage.googleapis.com/...
-
             uploadTask.snapshot.ref.getDownloadURL().then(downloadURL => {
               this.product.images.push(downloadURL);
             });
@@ -281,12 +281,17 @@ export default {
       $("#product").modal("hide");
     }
   },
+  fetchDate() {
+    this.date = Date.today();
+  },
   created() {}
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
+@import "../style/tableStyle.css";
+
 .img-wrapp {
   position: relative;
 }

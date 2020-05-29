@@ -9,7 +9,7 @@
               <p>You can check new art here</p>
             </div>
             <div class="col-md-6">
-              <img src="/img/svg/productz.svg" class="img-fluid" />
+              <img id="productsGif" src="/img/gif/productsGif.gif" class="img-responsive" />
             </div>
           </div>
         </div>
@@ -284,8 +284,15 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
+@import "../style/tableStyle.css";
+
 .img-wrap {
   position: relative;
+}
+
+#productsGif {
+  width: 480px;
+  height: 350px;
 }
 
 .img-wrap span.delete-img {
