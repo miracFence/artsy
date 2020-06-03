@@ -33,12 +33,14 @@
               <li class="header-menu">
                 <span>Menu</span>
               </li>
+
               <li>
                 <router-link to="/productsPage">
                   <i class="fa fa-chart-line"></i>
                   <span>Artists creations</span>
                 </router-link>
               </li>
+
               <li>
                 <router-link to="/admin/overview">
                   <i class="fa fa-chart-line"></i>

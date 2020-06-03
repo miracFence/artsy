@@ -4,9 +4,9 @@
       <div class="intro h-100">
         <div class="row h-100 justify-content-center align-items-center">
           <div class="col-md-6">
-            <h3>{{email}}</h3>
+            <h3>{{profile.name}}</h3>
             <p>My artist path:</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum totam sed iure illum reprehenderit, nisi accusantium beatae adipisci dolore quia expedita, error incidunt eveniet optio! Libero pariatur maiores praesentium molestiae!</p>
+            <p>{{profile.description}}</p>
           </div>
           <div class="col-md-6">
             <img src="/img/gif/overviewGif.gif" class="img-fluid" />
@@ -18,17 +18,25 @@
 </template>
 
 <script>
-import { fb } from "../firebase";
+import { fb, db } from "../firebase";
 export default {
   name: "Overview",
   data() {
     return {
-      name: null,
-      email: null
+      profile: {
+        name: null,
+        description: null
+      }
     };
   },
   props: {
     msg: String
+  },
+  firestore() {
+    const user = fb.auth().currentUser;
+    return {
+      profile: db.collection("profiles").doc(user.uid)
+    };
   },
   methods: {
     created() {

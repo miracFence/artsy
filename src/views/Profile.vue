@@ -5,8 +5,6 @@
         <div class="row h-100 align-items-center">
           <div class="col-md-6 ml-3">
             <h3>Profile settings</h3>
-
-            <p>Change your profile settings here</p>
           </div>
           <div class="col-md-5">
             <img src="/img/gif/profileGif.gif" width="300" alt class="img-fluid" />
@@ -71,17 +69,6 @@
                   </div>
                 </div>
 
-                <div class="col-md-4">
-                  <div class="form-group">
-                    <input
-                      type="text"
-                      v-model="profile.email"
-                      placeholder="Email"
-                      class="form-control"
-                    />
-                  </div>
-                </div>
-
                 <div class="col-md-6">
                   <div class="form-group">
                     <input
@@ -99,6 +86,17 @@
                       type="text"
                       v-model="profile.postCode"
                       placeholder="Postcode"
+                      class="form-control"
+                    />
+                  </div>
+                </div>
+
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <input
+                      type="textarea"
+                      v-model="profile.description"
+                      placeholder="Description"
                       class="form-control"
                     />
                   </div>
@@ -149,18 +147,11 @@ export default {
     return {
       profile: {
         name: null,
+        email: null,
+        description: null,
         phone: null,
         address: null,
         postcode: null
-      },
-      account: {
-        name: null,
-        email: null,
-        photoUrl: null,
-        emailVerified: null,
-        password: null,
-        confirmPassword: null,
-        uid: null
       }
     };
   },
