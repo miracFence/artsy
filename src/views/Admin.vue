@@ -23,6 +23,13 @@
               <span class="user-status">
                 <i class="fa fa-circle"></i>
                 <span>Online</span>
+                <a
+                  class="btn btn-outline-info border-0 mx-2 my-2 my-sm-0"
+                  data-toggle="modal"
+                  data-target="#miniCart"
+                >
+                  <i class="fas fa-shopping-bag"></i>
+                </a>
               </span>
             </div>
           </div>
@@ -36,14 +43,14 @@
 
               <li>
                 <router-link to="/admin/artistsCreations">
-                  <i class="fa fa-chart-line"></i>
+                  <i class="fa fa-at"></i>
                   <span>Artists creations</span>
                 </router-link>
               </li>
 
               <li>
                 <router-link to="/admin/overview">
-                  <i class="fa fa-chart-line"></i>
+                  <i class="fa fa-database"></i>
                   <span>Overview</span>
                 </router-link>
               </li>
@@ -62,7 +69,7 @@
               </li>
               <li>
                 <router-link to="/admin/profile">
-                  <i class="fa fa-user"></i>
+                  <i class="fa fa-id-card"></i>
                   <span class="menu-text">My profile</span>
                 </router-link>
               </li>

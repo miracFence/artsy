@@ -177,6 +177,7 @@ export default {
         .signInWithPopup(provider)
         .then(result => {
           $("#login").modal("hide");
+
           this.$router.replace("admin");
         })
         .catch(err => {
