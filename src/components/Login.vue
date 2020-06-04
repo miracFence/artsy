@@ -71,6 +71,13 @@
 
                 <div class="form-group">
                   <button class="btn btn-primary" @click="login">Login</button>
+                  <button class="social-button" @click="loginGoogle">
+                    <img src="../../public/img/png/google-logo.png" alt />
+                  </button>
+
+                  <button class="social-button" @click="loginFacebook">
+                    <img src="../../public/img/png/facebook-logo.png" alt />
+                  </button>
                 </div>
               </div>
               <div
@@ -163,6 +170,43 @@ export default {
           console.log(error);
         });
     },
+    loginGoogle() {
+      const provider = new fb.auth.GoogleAuthProvider();
+      fb.auth()
+        .signInWithPopup(provider)
+        .then(result => {
+          $("#login").modal("hide");
+          this.$router.replace("admin");
+        })
+        .catch(err => {
+          alert("Oops. " + err.message);
+        });
+    },
+    loginFacebook() {
+      const provider = new fb.auth.FacebookAuthProvider();
+      fb.auth()
+        .signInWithRedirect(provider)
+        .then(result => {
+          var token = result.credential.accessToken;
+
+          var user = result.user;
+
+          console.log(user);
+          $("#login").modal("hide");
+
+          this.$router.replace("admin");
+        })
+        .catch(error => {
+          var errorCode = error.code;
+
+          var errorMessage = error.message;
+          console.log(errorMessage);
+
+          var email = error.email;
+
+          var credential = error.credential;
+        });
+    },
     register() {
       fb.auth()
         .createUserWithEmailAndPassword(this.email, this.password)
@@ -202,4 +246,22 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
+.social-button {
+  width: 50px;
+  background: white;
+  padding: 5px;
+  border-radius: 100%;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+  outline: 0;
+  border: 0;
+  margin-left: 15px;
+}
+
+.social-button:active {
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+}
+
+.social-button img {
+  width: 100%;
+}
 </style>

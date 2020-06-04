@@ -6,6 +6,7 @@ import Overview from "../views/Overview.vue";
 import Products from "../views/Products.vue";
 import Orders from "../views/Orders.vue";
 import Profile from "../views/Profile.vue";
+import ArtistsCreations from "../sections/ArtistsCreations.vue";
 import { fb } from '../firebase';
 
 
@@ -26,6 +27,11 @@ const router = new VueRouter({
       component: Admin,
       meta: { requiresAuth: true },
       children: [
+        {
+          path: "artistsCreations",
+          name: "ArtistsCreations",
+          component: ArtistsCreations
+        },
         {
           path: "overview",
           name: "overview",
@@ -61,8 +67,8 @@ const router = new VueRouter({
         import("../views/About.vue")
     },
     {
-      path: "/productsPage",
-      name: "productsPage",
+      path: "/products",
+      name: "productsView",
       component: () =>
         import("../views/Products_view.vue")
     }

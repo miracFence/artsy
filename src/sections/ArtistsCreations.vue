@@ -1,13 +1,14 @@
 <template>
-  <div class="productsPage">
-    <Navbar></Navbar>
-    <h2>Check this beautiful art</h2>
+  <div class="ArtistsCreations">
+    <products-list></products-list>
   </div>
 </template>
 
 <script>
+import Products from "@/sections/Products.vue";
+
 export default {
-  name: "productsView",
+  name: "ArtistsCreations",
   components: {}
 };
 </script>

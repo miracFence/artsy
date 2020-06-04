@@ -69,7 +69,7 @@
                   </div>
                 </div>
 
-                <div class="col-md-6">
+                <div class="col-md-10">
                   <div class="form-group">
                     <input
                       type="text"
@@ -80,7 +80,7 @@
                   </div>
                 </div>
 
-                <div class="col-md-6">
+                <div class="col-md-2">
                   <div class="form-group">
                     <input
                       type="text"

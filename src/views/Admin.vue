@@ -35,7 +35,7 @@
               </li>
 
               <li>
-                <router-link to="/productsPage">
+                <router-link to="/admin/artistsCreations">
                   <i class="fa fa-chart-line"></i>
                   <span>Artists creations</span>
                 </router-link>
