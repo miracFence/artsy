@@ -136,7 +136,7 @@
 
 <script>
 import { fb, db } from "../firebase";
-
+import firebase from "@firebase/app";
 export default {
   name: "Login",
   props: {
@@ -171,8 +171,9 @@ export default {
         });
     },
     loginGoogle() {
-      const provider = new fb.auth.GoogleAuthProvider();
-      fb.auth()
+      const provider = new firebase.auth.GoogleAuthProvider();
+      firebase
+        .auth()
         .signInWithPopup(provider)
         .then(result => {
           $("#login").modal("hide");
@@ -183,8 +184,9 @@ export default {
         });
     },
     loginFacebook() {
-      const provider = new fb.auth.FacebookAuthProvider();
-      fb.auth()
+      const provider = new firebase.auth.FacebookAuthProvider();
+      firebase
+        .auth()
         .signInWithRedirect(provider)
         .then(result => {
           var token = result.credential.accessToken;
