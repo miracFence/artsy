@@ -3,7 +3,7 @@
     <center>
       <label>Search art:</label>
 
-      <input type="text" v-model="search" placeholder="Search" />
+      <input type="text" v-model="search" placeholder="Search" id="search-bar" />
     </center>
 
     <products-list></products-list>
@@ -57,5 +57,9 @@ tr:not(:first-child) {
 td {
   padding-top: 1em;
   padding-bottom: 1em;
+}
+
+#search-bar {
+  margin: 10px;
 }
 </style>

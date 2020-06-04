@@ -16,25 +16,16 @@
       <div class="container h-20">
         <div class="row h-20 justify-content-center-align-items-center">
           <div class="card-group">
-            <v-card class="mx-auto" max-width="344">
-              <v-card-text>
-                <div>Your earnings</div>
-                <p class="display-1 text--primary">THIS WEEK</p>
-                <p>WEEKLY PRICE</p>
-                <p class="display-1 text--primary">THIS MONTH</p>
-                <p>MONTHLY PRICE</p>
-                <p class="display-1 text--primary">THIS YEAR</p>
-                <p>ANUALLY PRICE</p>
-              </v-card-text>
-              <v-card-actions>
-                <v-btn text color="deep-purple accent-4">Show Graph</v-btn>
-              </v-card-actions>
-            </v-card>
-            <v-card class="mx-auto" max-width="344">
-              <v-card-text>
-                <div>Sold products</div>
-              </v-card-text>
-            </v-card>
+            <div class="card" style="width: 18rem;">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                <p
+                  class="card-text"
+                >Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" class="card-link">Show graph</a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -74,4 +65,11 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
+.card {
+  margin: 20px;
+}
+
+.container.h-100 {
+  background-color: gray;
+}
 </style>

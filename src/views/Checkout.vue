@@ -27,15 +27,7 @@
         <div class="col-md-3">
           <p>Total Price: {{this.$store.getters.totalPrice | currency}}</p>
 
-          <!--card
-            class="stripe-card"
-            :class="{ complete }"
-            stripe="pk_test_XXXXXXXXXXXXXXXXXXXXXXXX"
-            :options="stripeOptions"
-            @change="complete = $event.complete"
-          /-->
-
-          <button class="btn btn-primary" @click="pay()">Checkout</button>
+          <button class="btn btn-primary" @click="checkout">Checkout</button>
         </div>
       </div>
     </div>
@@ -44,14 +36,23 @@
 <script>
 import axios from "axios";
 var stripe = require("stripe")("sk_test_DemBjPLIiKgq8dYdipcirqDm00IvtwUCmf");
-
+import { fb, db } from "../firebase";
 export default {
   data() {
     return {
+      order: {
+        user: "Anon",
+        product: null,
+        price: null,
+        date: null
+      },
       sessionId: ""
     };
   },
   methods: {
+    checkout() {
+      this.$firestore.orders.update(this.order);
+    },
     pay() {
       let data = this.$store.state.cart.map(item => ({
         [item.productId]: item.productQuantity
