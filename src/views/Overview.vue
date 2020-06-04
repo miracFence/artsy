@@ -13,6 +13,31 @@
           </div>
         </div>
       </div>
+      <div class="container h-20">
+        <div class="row h-20 justify-content-center-align-items-center">
+          <div class="card-group">
+            <v-card class="mx-auto" max-width="344">
+              <v-card-text>
+                <div>Your earnings</div>
+                <p class="display-1 text--primary">THIS WEEK</p>
+                <p>WEEKLY PRICE</p>
+                <p class="display-1 text--primary">THIS MONTH</p>
+                <p>MONTHLY PRICE</p>
+                <p class="display-1 text--primary">THIS YEAR</p>
+                <p>ANUALLY PRICE</p>
+              </v-card-text>
+              <v-card-actions>
+                <v-btn text color="deep-purple accent-4">Show Graph</v-btn>
+              </v-card-actions>
+            </v-card>
+            <v-card class="mx-auto" max-width="344">
+              <v-card-text>
+                <div>Sold products</div>
+              </v-card-text>
+            </v-card>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
