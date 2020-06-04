@@ -2,13 +2,30 @@
   <div class="productsPage">
     <Navbar></Navbar>
     <h2>Check this beautiful art</h2>
+    <products-list></products-list>
   </div>
 </template>
 
 <script>
+import { db } from "../firebase";
 export default {
   name: "productsView",
-  components: {}
+  components: {},
+  data() {
+    return {
+      products: []
+    };
+  },
+  methods: {
+    getImage(images) {
+      return images[0];
+    }
+  },
+  firestore() {
+    return {
+      products: db.collection("products")
+    };
+  }
 };
 </script>
 

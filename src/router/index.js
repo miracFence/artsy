@@ -67,7 +67,7 @@ const router = new VueRouter({
         import("../views/About.vue")
     },
     {
-      path: "/products",
+      path: "/productsPage",
       name: "productsView",
       component: () =>
         import("../views/Products_view.vue")
