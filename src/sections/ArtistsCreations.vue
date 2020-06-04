@@ -1,5 +1,11 @@
 <template>
   <div class="ArtistsCreations">
+    <center>
+      <label>Search art:</label>
+
+      <input type="text" v-model="search" placeholder="Search" />
+    </center>
+
     <products-list></products-list>
   </div>
 </template>
