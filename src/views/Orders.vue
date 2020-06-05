@@ -8,9 +8,10 @@
             <p>Here, you can view what people have ordered you &#129297;</p>
             <select v-model="selected">
               <option disabled value>Filter by sorting elements</option>
-              <option>A</option>
-              <option>B</option>
-              <option>C</option>
+              <option>User</option>
+              <option>Product</option>
+              <option>Price</option>
+              <option>Date</option>
             </select>
           </div>
           <div class="col-md-6">

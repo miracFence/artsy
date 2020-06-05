@@ -197,40 +197,37 @@ export default {
     },
     loginFacebook() {
       const provider = new firebase.auth.FacebookAuthProvider();
-      firebase
-        .auth()
-        .signInWithRedirect(provider)
-        .then(result => {
-          var token = result.credential.accessToken;
+      firebase.auth().signInWithRedirect(provider);
+      then(result => {
+        var token = result.credential.accessToken;
 
-          var user = result.user;
+        var user = result.user;
 
-          console.log(user);
-          $("#login").modal("hide");
-          db.collection("profiles")
-            .doc(result.user.uid)
-            .set({
-              name: this.name,
-              email: this.email
-            })
-            .then(function() {
-              console.log("Document successfully written!");
-            })
-            .catch(function(error) {
-              console.error("Error writing document: ", error);
-            });
-          this.$router.replace("admin");
-        })
-        .catch(error => {
-          var errorCode = error.code;
+        console.log(user);
+        $("#login").modal("hide");
+        db.collection("profiles")
+          .doc(result.user.uid)
+          .set({
+            name: user,
+            email: this.email
+          })
+          .then(function() {
+            console.log("Document successfully written!");
+          })
+          .catch(function(error) {
+            console.error("Error writing document: ", error);
+          });
+        this.$router.replace("admin");
+      }).catch(error => {
+        var errorCode = error.code;
 
-          var errorMessage = error.message;
-          console.log(errorMessage);
+        var errorMessage = error.message;
+        console.log(errorMessage);
 
-          var email = error.email;
+        var email = error.email;
 
-          var credential = error.credential;
-        });
+        var credential = error.credential;
+      });
     },
     register() {
       fb.auth()

@@ -4,6 +4,7 @@
       <label>Search art:</label>
 
       <input type="text" v-model="search" placeholder="Search" id="search-bar" />
+      <i class="fa fa-search"></i>
     </center>
 
     <products-list></products-list>

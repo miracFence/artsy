@@ -18,12 +18,25 @@
           <div class="card-group">
             <div class="card" style="width: 18rem;">
               <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                <p
-                  class="card-text"
-                >Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <h5 class="card-title">Your earnings</h5>
+                <h6 class="card-subtitle mb-2 text-muted">This week:</h6>
+                <p class="card-text">Weekly prices</p>
+                <h6 class="card-subtitle mb-2 text-muted">This month:</h6>
+                <p class="card-text">Monthly prices</p>
+                <h6 class="card-subtitle mb-2 text-muted">This year:</h6>
+                <p class="card-text">Annual prices</p>
                 <a href="#" class="card-link">Show graph</a>
+              </div>
+            </div>
+            <div class="card" style="width: 18rem;" id="card-2">
+              <div class="card-body">
+                <h5 class="card-title">Sold products</h5>
+                <h6 class="card-subtitle mb-2 text-muted">This week:</h6>
+                <p class="card-text">Weekly prices</p>
+                <h6 class="card-subtitle mb-2 text-muted">This month:</h6>
+                <p class="card-text">Monthly prices</p>
+                <h6 class="card-subtitle mb-2 text-muted">This year:</h6>
+                <p class="card-text">Annual prices</p>
               </div>
             </div>
           </div>
@@ -65,11 +78,16 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-.card {
-  margin: 20px;
+.card-link {
+  color: teal;
 }
 
-.container.h-100 {
+.card {
+  margin: 20px;
+  background-color: #cdf1cc;
+}
+
+#card-2 {
   background-color: gray;
 }
 </style>
